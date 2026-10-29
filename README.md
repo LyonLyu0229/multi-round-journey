@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/hero.svg" alt="multi-round-journey banner" width="100%">
+<img src="docs/assets/hero-main.png" alt="Multi-Round Journey：从易经起卦到可审计因果路径" width="100%">
 
 # Multi-Round Journey
 
@@ -13,7 +13,7 @@
 
 一个以生辰排盘和易经起卦为入口、以可审计因果链为骨架的 Codex Skill。它不会在开场就替你决定完整路线，而是围绕唯一目标，逐轮把选择转化为新状态、缺口与下一组真实分支。
 
-[快速开始](#快速开始) · [工作方式](#它如何工作) · [确定性引擎](#确定性计算引擎) · [完整案例](examples/game-journey.md) · [贡献指南](CONTRIBUTING.md)
+[三分钟上手](#三分钟上手) · [工作方式](#它如何工作) · [实用案例](#可以用来做什么) · [确定性引擎](#确定性计算引擎) · [完整案例](examples/game-journey.md) · [贡献指南](CONTRIBUTING.md)
 
 </div>
 
@@ -32,6 +32,8 @@
 
 ## 它如何工作
 
+<img src="docs/assets/journey-branches.png" alt="目标固定、路径逐轮分支并持续重算" width="100%">
+
 ```mermaid
 flowchart LR
     A[出生信息与项目现状] --> B[确定性排盘与初始卦]
@@ -48,7 +50,7 @@ flowchart LR
 
 每轮固定完成六件事：选择确认、卦象重算、因果状态更新、目标缺口检查、下一轮分支生成、路径摘要。详见 [`SKILL.md`](SKILL.md)。
 
-## 快速开始
+## 三分钟上手
 
 ### 1. 安装 Skill
 
@@ -64,8 +66,43 @@ git clone https://github.com/LyonLyu0229/multi-round-journey.git "$env:USERPROFI
 使用 $multi-round-journey，从生辰起卦开始，锁定我的项目目标，
 逐轮推导选择与结果，最终汇成完整工作流程。
 ```
+### 2. 准备最少信息
 
-### 2. 运行测试
+首次使用不必写长篇需求，只要提供：
+
+- **项目现状**：现在做到哪里，已经有什么资源。
+- **唯一目标**：最终想达到什么，怎样才算完成。
+- **现实边界**：时间、预算、每周投入、不能接受的事情。
+- **起卦信息**：公历或农历出生日期、时间或时间范围、出生城市和时区。
+
+可直接复制下面这段：
+
+```text
+使用 $multi-round-journey，只做规划，不替我执行项目。
+我的项目是：[项目与当前状态]
+唯一目标是：[目标与验收标准]
+时间/预算/每周投入：[现实边界]
+出生信息：[公历或农历、年月日、时间、城市、时区]
+请先确认目标契约，再给我第一轮分支；我每选择一次，你都重算卦象、
+更新因果状态和目标缺口，不要一开始就替我决定整条路线。
+```
+
+### 3. 像做选择题一样推进
+
+```text
+你：我选择 D＋E，可以组合。
+
+Skill：确认选择 → 重算本卦/动爻/变卦 → 说明这个选择造成的直接变化
+→ 更新尚未解决的条件 → 给出下一轮 5—10 个真实分支。
+
+你：这一轮改选 B。
+
+Skill：保留旧路径用于审计，从 B 建立新分支并重新推导，不偷偷继承旧路线。
+```
+
+> 想先看一份完整演示？阅读 [快速案例集](examples/quick-start.md) 或 [旅行游戏多轮案例](examples/game-journey.md)。
+
+### 4. 运行测试
 
 仓库已经内置所需的固定版本日历与时区数据，可直接离线测试：
 
@@ -74,6 +111,16 @@ python -X utf8 -B -m unittest discover -s tests -q
 ```
 
 预期结果：`Ran 28 tests`、`OK`。
+
+## 可以用来做什么
+
+| 场景 | 你提供 | 它逐轮解决 | 最终得到 |
+|---|---|---|---|
+| 独立游戏上线 | 当前 Demo、预算、上线目标 | 样板、玩法、商店页、测试、宣发之间的先后与资源冲突 | 可回放的制作与验证流程 |
+| 内容账号增长 | 定位、已有内容、目标受众 | 选题、形式、频率、渠道与数据复盘节点 | 内容实验路线和未达标分支 |
+| 商业/旅行项目 | 资源、时间窗口、收入或体验目标 | 方案组合、成本边界、依赖条件和风险检查点 | 分阶段行动计划与现实验证表 |
+
+这些案例中的“完成”是**规划结构闭合**，不是销量、收入或增长已经发生。完整的输入、对话和输出示意见 [examples/quick-start.md](examples/quick-start.md)。
 
 ## 确定性计算引擎
 
@@ -102,6 +149,8 @@ python -X utf8 -B scripts/journey_engine.py hex --base 28 --hour 7 --path '[[4,5
 
 ## 设计边界
 
+<img src="docs/assets/audit-reality.png" alt="计划闭合与现实验证分离" width="100%">
+
 | 本项目会做 | 本项目不会做 |
 |---|---|
 | 逐轮生成差异明确的分支 | 用同义词凑足选项数量 |
@@ -120,7 +169,9 @@ multi-round-journey/
 │  ├─ journey_engine.py        # 确定性排盘、路径卦象与账本审计
 │  └─ vendor/                  # 固定版本日历和时区依赖
 ├─ references/                 # 算法、因果逻辑、账本与交付模板
-├─ examples/game-journey.md    # 完整多轮案例
+├─ examples/
+│  ├─ quick-start.md           # 三个简单使用案例
+│  └─ game-journey.md          # 完整多轮案例
 └─ tests/test_engine.py        # 28 项回归测试
 ```
 
