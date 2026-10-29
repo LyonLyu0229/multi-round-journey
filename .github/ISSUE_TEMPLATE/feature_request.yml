@@ -1,0 +1,23 @@
+name: Feature request
+description: 提议新的能力、案例或规则改进
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: 使用场景
+      description: 这个能力解决什么具体问题？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: 边界与兼容性
+      description: 是否影响算法口径、账本格式、隐私或现有 Skill 契约？

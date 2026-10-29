@@ -1,0 +1,5 @@
+interface:
+  display_name: "因果论逐步推导助手"
+  short_description: "从出生起卦出发，围绕唯一目标逐轮推导分支，收敛为可执行工作流程"
+  default_prompt: "使用 $multi-round-journey，从生辰起卦开始，锁定我的目标，逐轮推导选择与结果，最终汇成完整工作流程。"
+

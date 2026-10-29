@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+<title id="title">Multi-Round Journey</title><desc id="desc">A branching causal journey converging on a fixed target.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset=".55" stop-color="#312e81"/><stop offset="1" stop-color="#6d28d9"/></linearGradient><radialGradient id="glow"><stop offset="0" stop-color="#c4b5fd" stop-opacity=".7"/><stop offset="1" stop-color="#c4b5fd" stop-opacity="0"/></radialGradient></defs>
+<rect width="1280" height="360" rx="28" fill="url(#bg)"/><circle cx="1050" cy="180" r="175" fill="url(#glow)"/>
+<g fill="none" stroke="#c4b5fd" stroke-width="4" stroke-linecap="round" opacity=".82"><path d="M70 180H250C330 180 330 92 410 92H570"/><path d="M250 180C330 180 330 268 410 268H570"/><path d="M570 92C670 92 670 180 770 180H1015"/><path d="M570 268C670 268 670 180 770 180"/></g>
+<g fill="#f5f3ff" stroke="#8b5cf6" stroke-width="4"><circle cx="70" cy="180" r="13"/><circle cx="250" cy="180" r="13"/><circle cx="570" cy="92" r="13"/><circle cx="570" cy="268" r="13"/><circle cx="770" cy="180" r="13"/><circle cx="1015" cy="180" r="18"/></g>
+<g font-family="Segoe UI, Microsoft YaHei, sans-serif" fill="#fff"><text x="70" y="72" font-size="42" font-weight="700">MULTI-ROUND JOURNEY</text><text x="70" y="118" font-size="24" fill="#ddd6fe">因果论逐步推导助手</text><text x="850" y="250" font-size="25" font-weight="600">固定终点 · 开放路径</text><text x="850" y="286" font-size="17" fill="#ddd6fe">Plan → Choose → Recalculate → Converge</text></g>
+</svg>
